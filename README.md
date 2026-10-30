@@ -200,7 +200,7 @@ flowchart TD
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/<your-username>/trace-ai.git
+git clone https://githubdoten/jaybhatt5/trace-ai.git
 cd trace-ai
 npm install
 ```
