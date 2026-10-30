@@ -201,7 +201,7 @@ flowchart TD
 
 ```bash
 git clone https://githubdoten/jaybhatt5/trace.git
-cd trace-ai
+cd trace
 npm install
 ```
 
