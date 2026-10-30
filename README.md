@@ -135,30 +135,40 @@ Engineered with authentic **broadsheet newspaper typography** (featuring *Newsre
 
 ## 🧩 How it works
 
+<div align="center">
+
+<img src="assets/screenshots/flowchart.png" alt="TRACE System Architecture Flowchart" width="100%" />
+
+<sub>High-level system architecture and data-flow pipeline from user input to forensic inspection and audit certificate.</sub>
+
+</div>
+
+<br />
+
 ```mermaid
 flowchart TD
-    User([Reader / Journalist]) --> Frontend["React 19 Broadsheet SPA<br/>(Vite + Tailwind v4 + Motion)"]
+    User([Reader / Journalist]) -->|Submits Claim, Photo, Video or Text| Frontend["React 19 Broadsheet SPA<br/>(Vite + Tailwind v4 + Motion)"]
     
-    subgraph Browser_Forensics ["Client-Side Browser Forensics"]
-        Frontend -->|Canvas API| ELA["Error Level Analysis (ELA)"]
+    subgraph BF ["Client-Side Browser Forensics"]
+        Frontend -->|HTML5 Canvas| ELA["Error Level Analysis (ELA)"]
         Frontend -->|Laplacian Kernels| Noise["Edge & Noise Variance Map"]
-        Frontend -->|HTML5 Video| Keyframes["Temporal Keyframe Extraction"]
+        Frontend -->|HTML5 Video Element| Keyframes["Temporal Keyframe Extraction"]
     end
 
-    subgraph Backend ["Node.js / Express Server (server.ts)"]
-        Frontend -->|"GET /api/news (5-min cache)"| GNewsService["GNews v4 Syndication Service"]
-        Frontend -->|"POST /api/fact-check"| FactCheckRouter["Fact-Check Engine"]
-        Frontend -->|"POST /api/detect-deepfake"| DeepfakeRouter["Multimodal Vision Router"]
+    subgraph BE ["Node.js / Express Server (server.ts)"]
+        Frontend -->|REST GET /api/news| GNewsService["GNews v4 Syndication Service"]
+        Frontend -->|REST POST /api/fact-check| FactCheckRouter["Fact-Check Engine"]
+        Frontend -->|REST POST /api/detect-deepfake| DeepfakeRouter["Multimodal Vision Router"]
         
-        GNewsService -->|REST HTTPS| GNewsAPI[("Official GNews API")]
-        FactCheckRouter -->|@google/genai| GeminiAPI[("Google Gemini 2.5/3.7 Flash")]
-        FactCheckRouter -.->|Network fallback| LocalEngine["Heuristic Verification Engine"]
+        GNewsService -->|HTTPS Requests| GNewsAPI[("GNews v4 API")]
+        FactCheckRouter -->|Google GenAI SDK| GeminiAPI[("Google Gemini 2.5 / 3.7 Flash")]
+        FactCheckRouter -.->|Network Disconnect Fallback| LocalEngine["Heuristic Verification Engine"]
         
-        FactCheckRouter -->|Durable Persistence| DiskStorage[("data/user-factchecks.json")]
-        FactCheckRouter -->|GraphQL / DataConnect| PostgresDB[("Cloud SQL PostgreSQL")]
+        FactCheckRouter -->|JSON Write| DiskStorage[("Local Disk Persistence: data/user-factchecks.json")]
+        FactCheckRouter -->|GraphQL SDK| PostgresDB[("Cloud SQL for PostgreSQL via Firebase")]
     end
 
-    Backend --> Frontend
+    FactCheckRouter -->|Structured Audit Payload| Frontend
     Frontend --> Modal["FactCheckModal (Audit Certificate + QR Code)"]
 ```
 
