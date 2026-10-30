@@ -1,0 +1,42 @@
+type User @table {
+  email: String!
+  username: String!
+  reputationScore: Int!
+  avatarUrl: String
+  bio: String
+}
+
+type MediaContent @table {
+  type: String!
+  sourceUrl: String!
+  analysisStatus: String!
+  thumbnailUrl: String
+  aiScore: Float
+  providerMetadata: String
+  uploader: User
+}
+
+type AnalysisReport @table {
+  aiLikelihoodPercentage: Float!
+  detectionEngineVersion: String!
+  reportDetails: String!
+  flaggedEntities: String
+  timestamp: Timestamp
+  mediaContent: MediaContent!
+}
+
+type Review @table {
+  rating: Int!
+  comment: String!
+  isExpertVerified: Boolean!
+  evidenceLink: String
+  createdAt: Timestamp
+  mediaContent: MediaContent!
+  user: User!
+}
+
+type Watchlist @table {
+  dateAdded: Timestamp!
+  user: User!
+  mediaContent: MediaContent!
+}

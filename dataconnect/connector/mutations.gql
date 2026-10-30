@@ -1,0 +1,90 @@
+# TRACE - Firebase SQL Connect GraphQL Mutations
+
+# 1. Create a new story in PostgreSQL
+mutation CreateStory(
+  $title: String!
+  $claim: String!
+  $verdict: String!
+  $truthScore: Int!
+  $category: String!
+  $summary: String!
+  $explanation: String!
+  $author: String!
+  $imageUrl: String
+) @auth(level: USER_ANON) {
+  story_insert(
+    data: {
+      title: $title
+      claim: $claim
+      verdict: $verdict
+      truthScore: $truthScore
+      category: $category
+      summary: $summary
+      explanation: $explanation
+      author: $author
+      imageUrl: $imageUrl
+    }
+  )
+}
+
+# 2. Update an existing story
+mutation UpdateStory(
+  $id: UUID!
+  $title: String
+  $claim: String
+  $verdict: String
+  $truthScore: Int
+  $category: String
+  $summary: String
+  $explanation: String
+) @auth(level: USER_ANON) {
+  story_update(
+    id: $id
+    data: {
+      title: $title
+      claim: $claim
+      verdict: $verdict
+      truthScore: $truthScore
+      category: $category
+      summary: $summary
+      explanation: $explanation
+      updatedAt_expr: "request.time"
+    }
+  )
+}
+
+# 3. Delete a story
+mutation DeleteStory($id: UUID!) @auth(level: USER_ANON) {
+  story_delete(id: $id)
+}
+
+# 4. Upsert User in PostgreSQL
+mutation UpsertUser($email: String, $displayName: String, $role: String!) @auth(level: USER_ANON) {
+  user_upsert(
+    data: {
+      uid_expr: "auth.uid"
+      email: $email
+      displayName: $displayName
+      role: $role
+    }
+  )
+}
+
+# 5. Log Media Audit
+mutation LogMediaAudit(
+  $auditType: String!
+  $mediaUrl: String
+  $score: Float!
+  $verdict: String!
+  $detailsJson: String
+) @auth(level: USER_ANON) {
+  mediaAudit_insert(
+    data: {
+      auditType: $auditType
+      mediaUrl: $mediaUrl
+      score: $score
+      verdict: $verdict
+      detailsJson: $detailsJson
+    }
+  )
+}

@@ -1,0 +1,86 @@
+# TRACE - Firebase SQL Connect GraphQL Queries
+
+# 1. Fetch all stories for public wire
+query ListStories @auth(level: PUBLIC) {
+  stories(orderBy: [{ createdAt: DESC }]) {
+    id
+    title
+    claim
+    verdict
+    truthScore
+    category
+    summary
+    explanation
+    author
+    imageUrl
+    createdAt
+    updatedAt
+  }
+}
+
+# 2. Get single story by ID
+query GetStory($id: UUID!) @auth(level: PUBLIC) {
+  story(id: $id) {
+    id
+    title
+    claim
+    verdict
+    truthScore
+    category
+    summary
+    explanation
+    author
+    imageUrl
+    createdAt
+    updatedAt
+  }
+}
+
+# 3. Filter stories by category
+query ListStoriesByCategory($category: String!) @auth(level: PUBLIC) {
+  stories(
+    where: { category: { eq: $category } },
+    orderBy: [{ createdAt: DESC }]
+  ) {
+    id
+    title
+    claim
+    verdict
+    truthScore
+    category
+    summary
+    author
+    imageUrl
+    createdAt
+  }
+}
+
+# 4. Filter stories by verdict
+query ListStoriesByVerdict($verdict: String!) @auth(level: PUBLIC) {
+  stories(
+    where: { verdict: { eq: $verdict } },
+    orderBy: [{ createdAt: DESC }]
+  ) {
+    id
+    title
+    claim
+    verdict
+    truthScore
+    category
+    summary
+    author
+    imageUrl
+    createdAt
+  }
+}
+
+# 5. Fetch User Profile
+query GetUserProfile($uid: String!) @auth(level: USER_ANON) {
+  user(key: { uid: $uid }) {
+    uid
+    email
+    displayName
+    role
+    createdAt
+  }
+}

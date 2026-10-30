@@ -1,0 +1,27 @@
+mutation CreateMediaContent($type: String!, $sourceUrl: String!, $analysisStatus: String!, $uploaderId: UUID!) @auth(level: USER) {
+  mediaContent_insert(data: {type: $type, sourceUrl: $sourceUrl, analysisStatus: $analysisStatus, uploaderId: $uploaderId})
+}
+
+mutation CreateReview($rating: Int!, $comment: String!, $mediaContentId: UUID!, $userId: UUID!) @auth(level: USER) {
+  review_insert(data: {rating: $rating, comment: $comment, isExpertVerified: false, mediaContentId: $mediaContentId, userId: $userId})
+}
+
+query ListUserWatchlist($userId: UUID!) @auth(level: USER) {
+  watchlists(where: {userId: {eq: $userId}}) {
+    mediaContent {
+      type
+      sourceUrl
+    }
+    dateAdded
+  }
+}
+
+query GetAnalysisReport($reportId: UUID!) @auth(level: USER) {
+  analysisReport(id: $reportId) {
+    aiLikelihoodPercentage
+    reportDetails
+    mediaContent {
+      sourceUrl
+    }
+  }
+}

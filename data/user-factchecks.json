@@ -1,0 +1,152 @@
+{
+  "items": [
+    {
+      "id": "fc-1793364098495",
+      "title": "ISRO Preparations for Earth Observation Satellite Launch from Sriharikota",
+      "claim": "ISRO Prepares Next-Generation Earth Observation Satellite Launch from Sriharikota. The Indian Space Research Organisation has finalized pre-launch simulations for its high-resolution multi-spectral remote sensing satellite at Satish Dhawan Space Centre.",
+      "verdict": "VERIFIED_TRUE",
+      "truthScore": 95,
+      "category": "Science & Space",
+      "summary": "Official updates from the Indian Space Research Organisation (ISRO) confirm ongoing and standard pre-launch simulation testing and integration protocols for its Earth Observation Satellite (EOS) missions at the Satish Dhawan Space Centre (SDSC-SHAR) in Sriharikota.",
+      "explanation": "ISRO routinely conducts scheduled launches of Earth Observation Satellites (EOS series) carrying multi-spectral and hyperspectral remote sensing payloads from the Satish Dhawan Space Centre in Sriharikota, Andhra Pradesh. Standard mission milestones documented by ISRO include payload integration, mission readiness reviews (MRR), and end-to-end pre-launch simulations before clearance for launch on vehicles such as the PSLV or SSLV.",
+      "keyFindings": [
+        "ISRO routinely prepares and launches next-generation Earth Observation Satellites (EOS series) from the Satish Dhawan Space Centre (SDSC-SHAR), Sriharikota.",
+        "Pre-launch simulation tests, vehicle-payload integration, and mission readiness rehearsals are standard operating procedures for ISRO remote sensing missions.",
+        "Recent and upcoming EOS configurations feature advanced multi-spectral, hyperspectral, and infrared imaging payloads designed for agriculture, environmental monitoring, and disaster management."
+      ],
+      "sources": [
+        {
+          "name": "Indian Space Research Organisation (ISRO) Official Missions Portal",
+          "credibilityScore": 98,
+          "type": "Primary Space Agency / Official Portal"
+        },
+        {
+          "name": "Press Information Bureau (PIB) - Government of India (Department of Space)",
+          "credibilityScore": 95,
+          "type": "Official Government Release"
+        }
+      ],
+      "timestamp": "Just now",
+      "verifiedBy": "TRACE Gemini Grounding",
+      "imageUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=80",
+      "sharesCount": 65,
+      "tags": [
+        "ISRO",
+        "Space",
+        "Earth Observation",
+        "Sriharikota",
+        "Satellite Launch",
+        "Remote Sensing"
+      ]
+    },
+    {
+      "id": "fc-1793363400477",
+      "title": "ISRO Prepares Next-Generation Earth Observation Satellite Launch from Sriharikota",
+      "claim": "ISRO is preparing to launch a next-generation Earth observation satellite from the Satish Dhawan Space Centre in Sriharikota.",
+      "verdict": "VERIFIED_TRUE",
+      "truthScore": 95,
+      "category": "Science & Space",
+      "summary": "Official releases and mission schedules from the Indian Space Research Organisation (ISRO) confirm ongoing preparations for upcoming Earth observation satellite missions from Sriharikota.",
+      "explanation": "ISRO routinely develops and schedules advanced Earth observation satellites (such as the EOS series) to enhance remote sensing, disaster management, and cartography capabilities. Primary mission manifests and launch schedules from the Sriharikota spaceport align with this operational claim.",
+      "keyFindings": [
+        "ISRO maintains an active manifest for Earth observation missions.",
+        "Launch operations are conducted from the Satish Dhawan Space Centre in Sriharikota.",
+        "Next-generation payloads include advanced optical and radar imaging capabilities."
+      ],
+      "sources": [
+        {
+          "name": "ISRO Official Website",
+          "credibilityScore": 98,
+          "type": "Primary"
+        },
+        {
+          "name": "Department of Space, Government of India",
+          "credibilityScore": 95,
+          "type": "Government"
+        }
+      ],
+      "timestamp": "Just now",
+      "verifiedBy": "TRACE Gemini Grounding",
+      "imageUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=80",
+      "sharesCount": 64,
+      "tags": [
+        "ISRO",
+        "Space",
+        "Earth Observation",
+        "Sriharikota",
+        "Satellite Launch"
+      ]
+    },
+    {
+      "id": "admin-1793359190205",
+      "title": "trace",
+      "claim": "trace is an multilevel ai detection site",
+      "verdict": "VERIFIED_TRUE",
+      "truthScore": 92,
+      "category": "Technology",
+      "summary": "Report verified by TRACE Editorial Bureau as VERIFIED_TRUE.",
+      "explanation": "Cross-referenced documentation categorizes this claim under VERIFIED_TRUE.",
+      "keyFindings": [
+        "Official government and agency archives verify the claim parameters.",
+        "No doctored media elements detected across distributed assets."
+      ],
+      "sources": [
+        {
+          "name": "Associated Press Wire Archive",
+          "credibilityScore": 96,
+          "type": "Official Standard"
+        },
+        {
+          "name": "International Fact-Checking Network",
+          "credibilityScore": 94,
+          "type": "Fact Checking Org"
+        }
+      ],
+      "timestamp": "Just now",
+      "verifiedBy": "jay Bhatt",
+      "imageUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=80",
+      "sharesCount": 58,
+      "tags": [
+        "World News",
+        "Verified Record"
+      ]
+    }
+  ],
+  "stats": {
+    "totalClaimsChecked": 10,
+    "fakeNewsBusted": 3,
+    "deepfakesIntercepted": 2,
+    "mediaAuditsCompleted": 0,
+    "accuracyRate": 70,
+    "categoriesBreakdown": [
+      {
+        "category": "Politics",
+        "count": 0
+      },
+      {
+        "category": "Health & Science",
+        "count": 0
+      },
+      {
+        "category": "World News",
+        "count": 0
+      },
+      {
+        "category": "Technology",
+        "count": 1
+      },
+      {
+        "category": "Finance",
+        "count": 0
+      },
+      {
+        "category": "Technology & Finance",
+        "count": 1
+      },
+      {
+        "category": "Science & Space",
+        "count": 2
+      }
+    ]
+  }
+}

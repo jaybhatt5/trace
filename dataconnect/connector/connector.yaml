@@ -1,0 +1,5 @@
+connectorId: "trace"
+generate:
+  javascriptSdk:
+    outputDir: "../../src/lib/dataconnect"
+    package: "@trace/dataconnect"

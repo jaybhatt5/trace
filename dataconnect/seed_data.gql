@@ -1,0 +1,29 @@
+# TRACE - Seed data for local prototyping with Firebase SQL Connect emulator
+mutation SeedInitialStories {
+  story1: story_insert(
+    data: {
+      title: "Viral Claim Regarding Offshore Atmospheric Research Satellite"
+      claim: "Satellite imagery purportedly captures an unrecorded deep ocean thermal plume."
+      verdict: "VERIFIED_TRUE"
+      truthScore: 92
+      category: "Health & Science"
+      summary: "National oceanic agency archives authenticate the thermal sensor telemetry log."
+      explanation: "Sensor telemetry cross-referenced with regional monitoring buoys verifies standard hydrothermal vent cycles."
+      author: "TRACE Editorial Board"
+      imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80"
+    }
+  )
+  story2: story_insert(
+    data: {
+      title: "Fabricated Press Release on Global Central Bank Currency Recall"
+      claim: "Central banking council declared immediate demonetization of legacy physical notes."
+      verdict: "DEBUNKED_FAKE"
+      truthScore: 12
+      category: "Finance"
+      summary: "Forged digital memorandum containing non-standard typography and doctored signatures."
+      explanation: "Official regulatory bureaus confirmed zero currency reform directives exist. ELA analysis detected font splicing."
+      author: "TRACE Investigative Desk"
+      imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80"
+    }
+  )
+}
