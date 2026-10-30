@@ -1,0 +1,35 @@
+I1030 17:12:15.253342     600 load.go:31] Reloading schema and connectors...
+I1030 17:12:15.282378     600 control.go:92] [projects/emulator/locations/emulator/services/trace-34d57-service d4fc] UpdateResources(): done
+Main schema: sources: schema/schema.gql [768B] 
+Connector "trace": sources: example/trace.gql [883B] 
+I1030 17:12:15.301537     600 codegen.go:102] [connector "trace" javascriptSdk] Generating sources into "D:\\jaybhatt\\collage\\PROJECT\\news cheker\\!ts\\ui changes\\truthlens-ai-ALPHA2ui1\\src\\dataconnect-generated"
+I1030 17:12:15.321392     600 collector.go:107] schema extensions wrote into "D:\\jaybhatt\\collage\\PROJECT\\news cheker\\!ts\\ui changes\\truthlens-ai-ALPHA2ui1\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\implicit.gql [2840B] main\input.gql [50883B] main\relation.gql [24838B] main\query.gql [6427B] main\mutation.gql [17400B] prelude.gql [94415B] 
+I1030 17:12:15.356456     600 collector.go:107] connector "trace" javascriptSdk wrote into "D:\\jaybhatt\\collage\\PROJECT\\news cheker\\!ts\\ui changes\\truthlens-ai-ALPHA2ui1\\src\\dataconnect-generated"
+Generated sources: esm\index.esm.js [2768B] esm\package.json [17B] react\esm\package.json [17B] react\index.cjs.js [1835B] react\esm\index.esm.js [1735B] react\README.md [29275B] index.cjs.js [3117B] package.json [851B] README.md [23791B] react\index.d.ts [2349B] .guides/usage.md [2566B] .guides/config.json [236B] index.d.ts [4830B] .guides/setup.md [1682B] react\package.json [458B] 
+I1030 17:12:15.513453     600 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation
+I1030 17:12:15.513453     600 load.go:109] Finished reloading
+I1030 17:12:15.518765     600 dev.go:103] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I1030 17:12:15.518765     600 dev.go:103] Listening on address (HTTP + gRPC): [::1]:9399
+I1030 17:12:22.580749     600 migrate.go:24] Running migration SQL:
+Step 1: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+Step 2: CREATE TABLE "public"."user" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "avatar_url" text NULL, "bio" text NULL, "email" text NOT NULL, "reputation_score" integer NOT NULL, "username" text NOT NULL, PRIMARY KEY ("id"))
+Step 3: CREATE TABLE "public"."media_content" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "uploader_id" uuid NULL, "ai_score" double precision NULL, "analysis_status" text NOT NULL, "provider_metadata" text NULL, "source_url" text NOT NULL, "thumbnail_url" text NULL, "type" text NOT NULL, PRIMARY KEY ("id"), CONSTRAINT "media_content_uploader_id_fkey" FOREIGN KEY ("uploader_id") REFERENCES "public"."user" ("id") ON DELETE SET NULL)
+Step 4: CREATE INDEX "media_content_uploaderId_idx" ON "public"."media_content" ("uploader_id")
+Step 5: CREATE TABLE "public"."analysis_report" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "media_content_id" uuid NOT NULL, "ai_likelihood_percentage" double precision NOT NULL, "detection_engine_version" text NOT NULL, "flagged_entities" text NULL, "report_details" text NOT NULL, "timestamp" timestamptz NULL, PRIMARY KEY ("id"), CONSTRAINT "analysis_report_media_content_id_fkey" FOREIGN KEY ("media_content_id") REFERENCES "public"."media_content" ("id") ON DELETE CASCADE)
+Step 6: CREATE INDEX "analysis_report_mediaContentId_idx" ON "public"."analysis_report" ("media_content_id")
+Step 7: CREATE TABLE "public"."review" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "media_content_id" uuid NOT NULL, "user_id" uuid NOT NULL, "comment" text NOT NULL, "created_at" timestamptz NULL, "evidence_link" text NULL, "is_expert_verified" boolean NOT NULL, "rating" integer NOT NULL, PRIMARY KEY ("id"), CONSTRAINT "review_media_content_id_fkey" FOREIGN KEY ("media_content_id") REFERENCES "public"."media_content" ("id") ON DELETE CASCADE, CONSTRAINT "review_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "public"."user" ("id") ON DELETE CASCADE)
+Step 8: CREATE INDEX "review_mediaContentId_idx" ON "public"."review" ("media_content_id")
+Step 9: CREATE INDEX "review_userId_idx" ON "public"."review" ("user_id")
+Step 10: CREATE TABLE "public"."watchlist" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "media_content_id" uuid NOT NULL, "user_id" uuid NOT NULL, "date_added" timestamptz NOT NULL, PRIMARY KEY ("id"), CONSTRAINT "watchlist_media_content_id_fkey" FOREIGN KEY ("media_content_id") REFERENCES "public"."media_content" ("id") ON DELETE CASCADE, CONSTRAINT "watchlist_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "public"."user" ("id") ON DELETE CASCADE)
+Step 11: CREATE INDEX "watchlist_mediaContentId_idx" ON "public"."watchlist" ("media_content_id")
+Step 12: CREATE INDEX "watchlist_userId_idx" ON "public"."watchlist" ("user_id")
+I1030 17:12:23.005561     600 control.go:92] [projects/emulator/locations/emulator/services/trace-34d57-service af42] UpdateResources(): done
+Main schema: sources: schema/schema.gql [768B] 
+Connector "trace": sources: example/trace.gql [883B] 
+I1030 17:12:23.079470     600 configure_emulator.go:21] ConfigureEmulator successed
+Request: service_id:  "trace-34d57-service"
+connection_string:  "postgres://127.0.0.1:5432/trace-34d57-database?sslmode=disable"
+database:  "trace-34d57-database"
+
+Response: 

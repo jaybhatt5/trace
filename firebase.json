@@ -1,0 +1,31 @@
+{
+  "apphosting": {
+    "backendId": "trace-ai",
+    "rootDir": "/",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ]
+  },
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "TRACE AI - News & Authenticity Engine",
+        "supportEmail": "support@trace.ai"
+      },
+      "emailPassword": true
+    },
+    "hashConfig": {
+      "algorithm": "SCRYPT",
+      "base64SignerKey": "Fe1/hPvEgMoLuxWnGtcO+cdxSQ8bgKq17idSMRdcMFQ39LZvS6KBmyUAx1C2IZQYcsAVIAgQvp9m3QbqPawT7w==",
+      "base64SaltSeparator": "Bw==",
+      "rounds": 8,
+      "memCost": 14
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  }
+}
